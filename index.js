@@ -14,7 +14,7 @@ function sort_array(array, compare_function = compare_values){
     return Quicksort.sort(array, compare_function);
 }
 
-function get_differents_from_arrays(a, b, compare_function = compare_values){
+function get_differences_from_arrays(a, b, compare_function = compare_values){
     // first thinks first ... we have to sort them ...
     a = sort_array(a, compare_function);
     b = sort_array(b, compare_function);
@@ -84,10 +84,10 @@ function test(length = 2000000){
 
     console.table({
         "Arrays generarted in (ms)" : get_ms_since(starttime) });
+  
     const start_diff_time = Date.now();
 
-    const {just_in_a, just_in_b, inside_ab} = get_differents_from_arrays(a,b);
-
+    const {just_in_a, just_in_b, inside_ab} = get_differences_from_arrays(a,b);
     console.table({
         "Done!":true,
         comparetime : get_ms_since(start_diff_time),
@@ -99,9 +99,11 @@ function test(length = 2000000){
 }
 
 function simple_test(){
+  
     const a = [0,1,2,3];
     const b = [0,1,2,4];
-    const {just_in_a, just_in_b, inside_ab} = get_differents_from_arrays(a,b);
+    const {just_in_a, just_in_b, inside_ab} = get_differences_from_arrays(a,b);
+
     console.table({
         a,
         b,
@@ -112,7 +114,7 @@ function simple_test(){
 }
 
 module.exports = {
-    get_differents_from_arrays,
+    get_differences_from_arrays,
     test,
     simple_test
 };
