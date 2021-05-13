@@ -8,10 +8,10 @@ npm install nodejs-array-different
 
 ## How to use
 ```
-const {get_differents_from_arrays} = require('nodejs-array-different');
+const {get_differences_from_arrays} = require('nodejs-array-different');
 let a = [0,1,2,3];
 let b = [0,1,2,4];
-let {just_in_a, just_in_b, inside_ab} = get_differents_from_arrays(a,b);
+let {just_in_a, just_in_b, inside_ab} = get_differences_from_arrays(a,b);
 console.table({
     a,
     b,
@@ -34,7 +34,7 @@ console.table({
 ### with compare function
 
 ```
-const {get_differents_from_arrays} = require('nodejs-array-different');
+const {get_differences_from_arrays} = require('nodejs-array-different');
 function compare_values(a, b) {
     if (a < b) return -1;
     else if (a > b) return 1;
@@ -42,7 +42,7 @@ function compare_values(a, b) {
 }
 let a = [0,1,2,3];
 let b = [0,1,2,4];
-let {just_in_a, just_in_b, inside_ab} = get_differents_from_arrays(a,b,compare_values);
+let {just_in_a, just_in_b, inside_ab} = get_differences_from_arrays(a,b,compare_values);
 console.table({
     a,
     b,
