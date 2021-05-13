@@ -1,0 +1,28 @@
+{
+  "dependencies": {
+    "optimized-quicksort": "^1.1.1"
+  },
+  "name": "nodejs-array-different",
+  "description": "get diff-arrays (justA, justB, both) from 2 Arrays",
+  "version": "1.0.0",
+  "main": "index.js",
+  "devDependencies": {},
+  "scripts": {
+    "test": "node test.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/klmpfh/nodejs-array-different.git"
+  },
+  "keywords": [
+    "nodejs",
+    "array",
+    "different"
+  ],
+  "author": "Max B.",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/klmpfh/nodejs-array-different/issues"
+  },
+  "homepage": "https://github.com/klmpfh/nodejs-array-different#readme"
+}
