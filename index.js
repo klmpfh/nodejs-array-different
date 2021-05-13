@@ -1,4 +1,4 @@
-var Quicksort = require('optimized-quicksort');
+const Quicksort = require('optimized-quicksort');
 
 function generate_random_array_with_length(length = 1000){
     return [...Array(length)].map(() => Math.floor(Math.random() * length));
@@ -20,9 +20,9 @@ function get_differences_from_arrays(a, b, compare_function = compare_values){
     b = sort_array(b, compare_function);
 
     // there are 3 returnable arrays:
-    let just_in_a = [];
-    let just_in_b = [];
-    let inside_ab = [];
+    const just_in_a = [];
+    const just_in_b = [];
+    const inside_ab = [];
 
     // we will take a loop to compare the values --> index
     let index_a = 0;
@@ -72,22 +72,22 @@ function get_differences_from_arrays(a, b, compare_function = compare_values){
 }
 
 function test(length = 2000000){
-    let starttime = Date.now();
+    const starttime = Date.now();
     function get_ms_since(from){return Date.now() - from;}
     console.table({
         "start" :  "test",
         starttime,
         "2 Arrays with x items:" : length});
     // lets do this this long arrays ...
-    let a = generate_random_array_with_length(length);
-    let b = generate_random_array_with_length(length);
+    const a = generate_random_array_with_length(length);
+    const b = generate_random_array_with_length(length);
 
     console.table({
         "Arrays generarted in (ms)" : get_ms_since(starttime) });
-    let start_diff_time = Date.now();
+  
+    const start_diff_time = Date.now();
 
-    let {just_in_a, just_in_b, inside_ab} = get_differences_from_arrays(a,b);
-
+    const {just_in_a, just_in_b, inside_ab} = get_differences_from_arrays(a,b);
     console.table({
         "Done!":true,
         comparetime : get_ms_since(start_diff_time),
@@ -99,9 +99,11 @@ function test(length = 2000000){
 }
 
 function simple_test(){
-    let a = [0,1,2,3];
-    let b = [0,1,2,4];
-    let {just_in_a, just_in_b, inside_ab} = get_differences_from_arrays(a,b);
+  
+    const a = [0,1,2,3];
+    const b = [0,1,2,4];
+    const {just_in_a, just_in_b, inside_ab} = get_differences_from_arrays(a,b);
+
     console.table({
         a,
         b,
