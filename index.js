@@ -83,44 +83,31 @@ function test(length = 2000000){
     let b = generate_random_array_with_length(length);
 
     console.table({
-        "Arrays generatet in (ms)" : get_ms_since(starttime) });
+        "Arrays generarted in (ms)" : get_ms_since(starttime) });
     let start_diff_time = Date.now();
 
-    let result = get_differents_from_arrays(a,b);
+    let {just_in_a, just_in_b, inside_ab} = get_differents_from_arrays(a,b);
 
     console.table({
         "Done!":true,
         comparetime : get_ms_since(start_diff_time),
         testtime : get_ms_since(starttime),
-        just_in_a : result.just_in_a.length,
-        just_in_b : result.just_in_b.length,
-        inside_ab : result.inside_ab.length,
+        just_in_a : just_in_a.length,
+        just_in_b : just_in_b.length,
+        inside_ab : inside_ab.length,
     });
 }
 
 function simple_test(){
-    let a = [0,1,2];
-    let b = [0,1,2];
+    let a = [0,1,2,3];
+    let b = [0,1,2,4];
+    let {just_in_a, just_in_b, inside_ab} = get_differents_from_arrays(a,b);
     console.table({
         a,
         b,
-        result : get_differents_from_arrays(a,b)
-    });
-
-    a = [0,1,2];
-    b = [5,6,7];
-    console.table({
-        a,
-        b,
-        result : get_differents_from_arrays(a,b)
-    });
-
-    a = [1,2,3];
-    b = [2,3,4];
-    console.table({
-        a,
-        b,
-        result : get_differents_from_arrays(a,b)
+        just_in_a,
+        just_in_b,
+        inside_ab,
     });
 }
 
