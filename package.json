@@ -1,12 +1,8 @@
 {
-  "dependencies": {
-    "optimized-quicksort": "^1.1.1"
-  },
   "name": "nodejs-array-different",
   "description": "get diff-arrays (justA, justB, both) from 2 Arrays",
   "version": "1.0.3",
   "main": "index.js",
-  "devDependencies": {},
   "scripts": {
     "test": "node test.js"
   },
